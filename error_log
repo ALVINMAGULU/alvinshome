@@ -1,0 +1,20 @@
+[Mon Aug 08 11:18:30.562460 2022] [proxy_fcgi:error] [pid 5135:tid 140112000169728] [client 41.75.189.40:22131] AH01071: Got error 'Primary script unknown\n'
+[Tue Aug 09 03:10:10.729608 2022] [proxy_fcgi:error] [pid 3145:tid 140111941420800] [client 185.7.214.104:58132] AH01071: Got error 'Primary script unknown\n'
+[Tue Aug 09 08:38:56.562278 2022] [core:error] [pid 263653:tid 140540884526848] [client 185.7.214.104:52974] AH00126: Invalid URI in request POST /cgi-bin/.%2e/.%2e/.%2e/.%2e/bin/sh HTTP/1.1
+[Thu Aug 11 07:33:18.711048 2022] [proxy_fcgi:error] [pid 21606:tid 140274302973696] [client 157.245.222.40:40038] AH01071: Got error 'Primary script unknown\n'
+[Thu Aug 11 20:21:06.416687 2022] [proxy_fcgi:error] [pid 21606:tid 140274219046656] [client 185.7.214.117:49064] AH01071: Got error 'Primary script unknown\n'
+[Fri Aug 12 01:36:43.297881 2022] [core:error] [pid 21288:tid 140274453911296] [client 185.7.214.117:53574] AH00126: Invalid URI in request POST /cgi-bin/.%2e/.%2e/.%2e/.%2e/bin/sh HTTP/1.1
+[Fri Aug 12 17:53:22.125043 2022] [proxy_fcgi:error] [pid 21288:tid 140274650711808] [client 185.7.214.117:52528] AH01071: Got error 'Primary script unknown\n'
+[Fri Aug 12 21:09:58.657257 2022] [core:error] [pid 21606:tid 140274269402880] [client 95.161.131.235:52650] AH00126: Invalid URI in request GET /../../mnt/mtd/Config/Account1 HTTP/1.1
+[Fri Aug 12 23:12:35.676722 2022] [core:error] [pid 21288:tid 140274487482112] [client 185.7.214.117:45876] AH00126: Invalid URI in request POST /cgi-bin/.%2e/.%2e/.%2e/.%2e/bin/sh HTTP/1.1
+[Sat Aug 13 13:46:35.110281 2022] [proxy_fcgi:error] [pid 21606:tid 140274294580992] [client 185.7.214.117:51918] AH01071: Got error 'Primary script unknown\n'
+[Sat Aug 13 19:14:27.917483 2022] [core:error] [pid 21288:tid 140274667497216] [client 185.7.214.117:48084] AH00126: Invalid URI in request POST /cgi-bin/.%2e/.%2e/.%2e/.%2e/bin/sh HTTP/1.1
+[Sun Aug 14 12:42:29.702004 2022] [proxy_fcgi:error] [pid 1140129:tid 140273556383488] [client 185.7.214.117:54322] AH01071: Got error 'Primary script unknown\n'
+[Sun Aug 14 18:07:11.258917 2022] [proxy_fcgi:error] [pid 1312310:tid 140274546231040] [client 5.188.210.227:62936] AH01071: Got error 'Primary script unknown\n', referer: https://www.google.com/
+[Sun Aug 14 18:56:29.218505 2022] [core:error] [pid 1140129:tid 140274412013312] [client 185.7.214.117:45690] AH00126: Invalid URI in request POST /cgi-bin/.%2e/.%2e/.%2e/.%2e/bin/sh HTTP/1.1
+[Mon Aug 15 19:35:30.632347 2022] [proxy_fcgi:error] [pid 1312310:tid 140273447311104] [client 185.7.214.117:45290] AH01071: Got error 'Primary script unknown\n'
+[Tue Aug 16 00:57:20.933559 2022] [core:error] [pid 1140129:tid 140273665423104] [client 185.7.214.117:51888] AH00126: Invalid URI in request POST /cgi-bin/.%2e/.%2e/.%2e/.%2e/bin/sh HTTP/1.1
+[Tue Aug 16 05:55:06.201815 2022] [proxy_fcgi:error] [pid 1770839:tid 140513967437568] (70007)The timeout specified has expired: [client 41.75.186.42:18182] AH01075: Error dispatching request to : (polling)
+[Tue Aug 16 05:55:20.844165 2022] [proxy_fcgi:error] [pid 1771064:tid 140513814476544] (70007)The timeout specified has expired: [client 41.75.186.42:18183] AH01075: Error dispatching request to : (polling)
+[Tue Aug 16 05:55:55.353419 2022] [proxy_fcgi:error] [pid 1771064:tid 140513797691136] (70007)The timeout specified has expired: [client 41.75.186.42:17988] AH01075: Error dispatching request to : (polling)
+[Tue Aug 16 05:57:13.276108 2022] [proxy_fcgi:error] [pid 1770839:tid 140513873225472] (70007)The timeout specified has expired: [client 41.75.186.42:18101] AH01075: Error dispatching request to : (polling)
