@@ -95,7 +95,7 @@ include ("dbconnect.php");
        $row = $result->fetch_assoc();
         $json += ["pirV" => booleaner($row["Value"])];
         */
-    echo json_encode($json);
+    print(json_encode($json));
     
    
     mysqli_close($conn);
