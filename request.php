@@ -79,7 +79,7 @@ include ("dbconnect.php");
     
     if($access == true){
         print("reached here");
-    $sql1 = "SELECT Security,Indoor,backlight,updateOTA,MotionSensor,LDR FROM mydb.homedevices WHERE ID=1";
+    $sql1 = "SELECT Security,Indoor,backlight,updateOTA,MotionSensor,LDR FROM mydb.homethings WHERE ID=1";
     $result = mysqli_query($conn,$sql1);
     $row = $result->fetch_assoc();
     $json = [];
