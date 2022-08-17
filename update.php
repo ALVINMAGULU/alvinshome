@@ -31,10 +31,10 @@ else
 {
     echo "Query succesfully executed!";
 }     
-     $sql = "UPDATE mydb.homethings SET MotionSensor= '$pir'WHERE ID='0'";
+     $sql = "UPDATE mydb.homethings SET MotionSensor= '$pir'WHERE ID='1'";
     mysqli_query($conn,$sql);
     
-     $sql = "UPDATE mydb.homethings SET LDR= '$ldr'WHERE ID='0'";
+     $sql = "UPDATE mydb.homethings SET LDR= '$ldr'WHERE ID='1'";
     mysqli_query($conn,$sql);
     
     mysqli_close($conn);
