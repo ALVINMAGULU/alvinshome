@@ -79,7 +79,7 @@ include ("dbconnect.php");
 mysqli_close($conn);
     
     if($access == true){
-    $sql1 = "SELECT Security,Indoor,backlight,updateOTA,MotionSensor,LDR FROM mydb.homethings WHERE ID= '1'";
+    $sql1 = "SELECT Security,Indoor,backlight,updateOTA,MotionSensor,LDR FROM mydb.homethings WHERE id= '1'";
     $result = mysqli_query($conn,$sql1);
     if ($result->num_rows > 0) {
   // output data of each row
