@@ -81,8 +81,10 @@ mysqli_close($conn);
     if($access == true){
     $sql1 = "SELECT Security,Indoor,backlight,updateOTA,MotionSensor,LDR FROM mydb.homethings WHERE ID= '1'";
     $result = mysqli_query($conn,$sql1);
-    $row = $result->fetch_assoc();
-        print($row);
+    if($row = $result->fetch_assoc()){
+        print("worked");
+    }
+     
     $json = [];
     $json += ["homeDevice" => $homedevice];
     $json += ["Indoor" => booleaner($row["Indoor"])];
