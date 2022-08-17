@@ -79,7 +79,7 @@ include ("dbconnect.php");
 mysqli_close($conn);
     
     if($access == true){
-    $sql1 = "SELECT * FROM mydb.homethings";
+    $sql1 = "SELECT * FROM mydb.Devices";
         //Security,Indoor,backlight,updateOTA,MotionSensor,LDR
     $result = mysqli_query($conn,$sql1);
     if ($result->num_rows > 0) {
