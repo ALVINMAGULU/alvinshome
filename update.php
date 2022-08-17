@@ -11,16 +11,16 @@ $ldr = $_GET["LR"];
 
 
   
-    $sql = "UPDATE mydb.homedevicesSET Indoor= '$Indoor'WHERE ID='1'";
+    $sql = "UPDATE mydb.homethings SET Indoor= '$Indoor'WHERE ID='1'";
     mysqli_query($conn,$sql);
     
-    $sql = "UPDATE mydb.homedevicess SET Security= '$Security'WHERE ID='1'";
+    $sql = "UPDATE mydb.homethings SET Security= '$Security'WHERE ID='1'";
     mysqli_query($conn,$sql);
     
-    $sql = "UPDATE mydb.homedevices SET backlight= '$backlight'WHERE ID='1'";
+    $sql = "UPDATE mydb.homethings SET backlight= '$backlight'WHERE ID='1'";
     mysqli_query($conn,$sql);
     
-    $sql = "UPDATE mydb.homedevices SET updateOTA= '$ota' WHERE ID='1'";
+    $sql = "UPDATE mydb.homethings SET updateOTA= '$ota' WHERE ID='1'";
     mysqli_query($conn,$sql);
      if(!$sql)
 {
@@ -31,10 +31,10 @@ else
 {
     echo "Query succesfully executed!";
 }     
-     $sql = "UPDATE mydb.homedevices SET MotionSensor= '$pir'WHERE ID='0'";
+     $sql = "UPDATE mydb.homethings SET MotionSensor= '$pir'WHERE ID='0'";
     mysqli_query($conn,$sql);
     
-     $sql = "UPDATE mydb.homedevices SET LDR= '$ldr'WHERE ID='0'";
+     $sql = "UPDATE mydb.homethings SET LDR= '$ldr'WHERE ID='0'";
     mysqli_query($conn,$sql);
     
     mysqli_close($conn);
