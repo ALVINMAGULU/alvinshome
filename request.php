@@ -76,6 +76,7 @@ include ("dbconnect.php");
         
          $access = true;
     }
+mysqli_close($conn);
     
     if($access == true){
         print("reached here");
