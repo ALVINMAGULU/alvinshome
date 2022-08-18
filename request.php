@@ -9,9 +9,9 @@ include ("dbconnect.php");
     $homedevice = false;
    
    function booleaner($string){
-       if($string == 0){
+       if($string == '0'){
            return false;
-       }else if($string == 1){
+       }else if($string == '1'){
            return true;
        }
    }
