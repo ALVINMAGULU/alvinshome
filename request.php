@@ -81,18 +81,13 @@ include ("dbconnect.php");
 mysqli_close($conn);
     
     if($access == true){
-    $sql1 = "SELECT * FROM mydb.Devices";
-        //Security,Indoor,backlight,updateOTA,MotionSensor,LDR
-    $result = mysqli_query($conn,$sql1);
-    if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-    echo "id: " . $row["id"]. " - Indoor: " . $row["Name"]. "Security " . $row["Connection"]. "<br>";
-  }
-} else {
-  echo "0 results";
-}
-  //  $row = $result->fetch_assoc();    
+        
+        $sql = "SELECT Security,Indoor,backlight,updateOTA,MotionSensor,LDR FROM mydb.homethings WHERE ID='1'";
+        $result = mysqli_query($conn,$sql);
+        $result = $conn->query($sql) or die($conn->error);
+        $row = $result->fetch_assoc();
+    
+        
     $json = [];
     $json += ["homeDevice" => $homedevice];
     $json += ["Indoor" => booleaner($row["Indoor"])];
