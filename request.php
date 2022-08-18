@@ -33,6 +33,7 @@ include ("dbconnect.php");
     $json += ["updateOTA" => $row["updateOTA"]];
      $json += ["pir" => $row["MotionSensor"]];
       $json += ["ldr" => $row["LDR"]];
+print_r ($json);
 print($json["Indoor"]);
       //print($json);
       /* $sql = "SELECT Value FROM MotionSensor ORDER BY ID DESC LIMIT 1";
