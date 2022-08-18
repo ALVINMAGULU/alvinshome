@@ -22,7 +22,7 @@ include ("dbconnect.php");
    // print($row["Indoor"]);
         
       $sql = "SELECT id,Security,Indoor,backlight,updateOTA,MotionSensor,LDR,changed_at FROM mydb.homethings WHERE ID='1'";
-        $result = mysqli_query($conn,$sql1);
+        $result = mysqli_query($conn,$sql);
         $result = $conn->query($sql) or die($conn->error);
         $row = $result->fetch_assoc();
         
