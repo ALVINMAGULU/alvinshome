@@ -82,7 +82,7 @@ mysqli_close($conn);
     
     if($access == true){
         
-        $sql = "SELECT Security,Indoor,backlight,updateOTA,MotionSensor,LDR FROM mydb.homethings WHERE ID='1'";
+        $sql = "SELECT id,Security,Indoor,backlight,updateOTA,MotionSensor,LDR,changed_at FROM mydb.homethings WHERE ID='1'";
         $result = mysqli_query($conn,$sql1);
         $result = $conn->query($sql) or die($conn->error);
         $row = $result->fetch_assoc();
