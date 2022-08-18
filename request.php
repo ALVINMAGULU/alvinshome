@@ -34,7 +34,7 @@ include ("dbconnect.php");
     $json += ["updateOTA" => booleaner($row["updateOTA"])];
      $json += ["pir" => $row["MotionSensor"]];
       $json += ["ldr" => booleaner($row["LDR"])];
-      
+      print($json);
       /* $sql = "SELECT Value FROM MotionSensor ORDER BY ID DESC LIMIT 1";
        $result = mysqli_query($conn,$sql);
        $row = $result->fetch_assoc();
