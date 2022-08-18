@@ -27,12 +27,12 @@ include ("dbconnect.php");
         //print($row["Indoor"]);
     $json = [];
     $json += ["homeDevice" => $homedevice];
-    $json += ["Indoor" => booleaner($row["Indoor"])];
-    $json += ["Security" => booleaner($row["Security"])];
-    $json += ["backlight" => booleaner($row["backlight"])];
-    $json += ["updateOTA" => booleaner($row["updateOTA"])];
+    $json += ["Indoor" => $row["Indoor"]];
+    $json += ["Security" => $row["Security"]];
+    $json += ["backlight" => $row["backlight"]];
+    $json += ["updateOTA" => $row["updateOTA"]];
      $json += ["pir" => $row["MotionSensor"]];
-      $json += ["ldr" => booleaner($row["LDR"])];
+      $json += ["ldr" => $row["LDR"]];
 //print($json["Indoor"]);
       //print($json);
       /* $sql = "SELECT Value FROM MotionSensor ORDER BY ID DESC LIMIT 1";
@@ -40,7 +40,7 @@ include ("dbconnect.php");
        $row = $result->fetch_assoc();
         $json += ["pirV" => booleaner($row["Value"])];
         */
-    //print(json_encode($json));
+    print(json_encode($json));
     
    
     if($device == "Alvinesp1"){
