@@ -40,8 +40,8 @@ include ("dbconnect.php");
         $row = $result->fetch_assoc();
         $newTime = $row["time"];
         $connection = $row["Connection"] + 1;
-         print($row["Connection"]);
-          print($row["time"]);
+       //  print($row["Connection"]);
+         // print($row["time"]);
         $sql = "UPDATE mydb.Devices SET Connection= '$connection' WHERE ID='2'";
         mysqli_query($conn,$sql);
         
@@ -86,7 +86,8 @@ mysqli_close($conn);
         $result = mysqli_query($conn,$sql1);
         $result = $conn->query($sql) or die($conn->error);
         $row = $result->fetch_assoc();
-    
+        
+    print($row["Indoor"]);
         
     $json = [];
     $json += ["homeDevice" => $homedevice];
