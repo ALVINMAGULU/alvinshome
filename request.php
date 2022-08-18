@@ -33,14 +33,14 @@ include ("dbconnect.php");
     $json += ["updateOTA" => $row["updateOTA"]];
      $json += ["pir" => $row["MotionSensor"]];
       $json += ["ldr" => $row["LDR"]];
-//print($json["Indoor"]);
+print($json["Indoor"]);
       //print($json);
       /* $sql = "SELECT Value FROM MotionSensor ORDER BY ID DESC LIMIT 1";
        $result = mysqli_query($conn,$sql);
        $row = $result->fetch_assoc();
         $json += ["pirV" => booleaner($row["Value"])];
         */
-    print(json_encode($json));
+   // print(json_encode($json));
     
    
     if($device == "Alvinesp1"){
