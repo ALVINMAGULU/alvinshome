@@ -13,8 +13,6 @@ include ("dbconnect.php");
            return false;
        }else if($string == '1'){
            return true;
-       }else{
-           return true;
        }
    }
    
