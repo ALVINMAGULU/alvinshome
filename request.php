@@ -25,7 +25,7 @@ include ("dbconnect.php");
         $result = mysqli_query($conn,$sql);
         $result = $conn->query($sql) or die($conn->error);
         $row = $result->fetch_assoc();
-        print(booleaner($row["Indoor"]));
+        print(booleaner('1'));
         print($row["Indoor"]);
     $json = [];
     $json += ["homeDevice" => $homedevice];
