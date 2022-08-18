@@ -21,7 +21,28 @@ include ("dbconnect.php");
  
    // print($row["Indoor"]);
         
+      $sql = "SELECT id,Security,Indoor,backlight,updateOTA,MotionSensor,LDR,changed_at FROM mydb.homethings WHERE ID='1'";
+        $result = mysqli_query($conn,$sql1);
+        $result = $conn->query($sql) or die($conn->error);
+        $row = $result->fetch_assoc();
+        
+    $json = [];
+    $json += ["homeDevice" => $homedevice];
+    $json += ["Indoor" => booleaner($row["Indoor"])];
+    $json += ["Security" => booleaner($row["Security"])];
+    $json += ["backlight" => booleaner($row["backlight"])];
+    $json += ["updateOTA" => booleaner($row["updateOTA"])];
+     $json += ["pir" => $row["MotionSensor"]];
+      $json += ["ldr" => booleaner($row["LDR"])];
+      
+      /* $sql = "SELECT Value FROM MotionSensor ORDER BY ID DESC LIMIT 1";
+       $result = mysqli_query($conn,$sql);
+       $row = $result->fetch_assoc();
+        $json += ["pirV" => booleaner($row["Value"])];
+        */
+    print(json_encode($json));
     
+   
     if($device == "Alvinesp1"){
         $sql = "SELECT Connection FROM mydb.Devices WHERE ID='1'";
         $result = mysqli_query($conn,$sql);
@@ -84,28 +105,7 @@ include ("dbconnect.php");
     
     if($access == true){
         print("Reached here");
-         $sql = "SELECT id,Security,Indoor,backlight,updateOTA,MotionSensor,LDR,changed_at FROM mydb.homethings WHERE ID='1'";
-        $result = mysqli_query($conn,$sql1);
-        $result = $conn->query($sql) or die($conn->error);
-        $row = $result->fetch_assoc();
-        
-    $json = [];
-    $json += ["homeDevice" => $homedevice];
-    $json += ["Indoor" => booleaner($row["Indoor"])];
-    $json += ["Security" => booleaner($row["Security"])];
-    $json += ["backlight" => booleaner($row["backlight"])];
-    $json += ["updateOTA" => booleaner($row["updateOTA"])];
-     $json += ["pir" => $row["MotionSensor"]];
-      $json += ["ldr" => booleaner($row["LDR"])];
-      
-      /* $sql = "SELECT Value FROM MotionSensor ORDER BY ID DESC LIMIT 1";
-       $result = mysqli_query($conn,$sql);
-       $row = $result->fetch_assoc();
-        $json += ["pirV" => booleaner($row["Value"])];
-        */
-    print(json_encode($json));
-    
-   
+       
     mysqli_close($conn);
     }else{
         print("Device not recognised");
