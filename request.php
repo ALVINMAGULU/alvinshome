@@ -40,7 +40,7 @@ include ("dbconnect.php");
        $row = $result->fetch_assoc();
         $json += ["pirV" => booleaner($row["Value"])];
         */
-    print(json_encode($json));
+    //print(json_encode($json));
     
    
     if($device == "Alvinesp1"){
