@@ -26,7 +26,7 @@ include ("dbconnect.php");
         print(booleaner(0));
         //print($row["Indoor"]);
     $json = [];
-    $json += ["homeDevice" => $homedevice];
+   // $json += ["homeDevice" => $homedevice];
     $json += ["Indoor" => $row["Indoor"]];
     $json += ["Security" => $row["Security"]];
     $json += ["backlight" => $row["backlight"]];
