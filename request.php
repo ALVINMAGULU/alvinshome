@@ -18,12 +18,8 @@ include ("dbconnect.php");
    
    
          
-   $sql = "SELECT id,Security,Indoor,backlight,updateOTA,MotionSensor,LDR,changed_at FROM mydb.homethings WHERE ID='1'";
-        $result = mysqli_query($conn,$sql1);
-        $result = $conn->query($sql) or die($conn->error);
-        $row = $result->fetch_assoc();
-        
-    print($row["Indoor"]);
+ 
+   // print($row["Indoor"]);
         
     
     if($device == "Alvinesp1"){
@@ -47,7 +43,7 @@ include ("dbconnect.php");
         $newTime = $row["time"];
         $connection = $row["Connection"] + 1;
        //  print($row["Connection"]);
-         print($row["time"]);
+         //print($row["time"]);
         $sql = "UPDATE mydb.Devices SET Connection= '$connection' WHERE ID='2'";
         mysqli_query($conn,$sql);
         
@@ -84,11 +80,15 @@ include ("dbconnect.php");
         
          $access = true;
     }
-mysqli_close($conn);
+
     
     if($access == true){
         print("Reached here");
-      
+         $sql = "SELECT id,Security,Indoor,backlight,updateOTA,MotionSensor,LDR,changed_at FROM mydb.homethings WHERE ID='1'";
+        $result = mysqli_query($conn,$sql1);
+        $result = $conn->query($sql) or die($conn->error);
+        $row = $result->fetch_assoc();
+        
     $json = [];
     $json += ["homeDevice" => $homedevice];
     $json += ["Indoor" => booleaner($row["Indoor"])];
