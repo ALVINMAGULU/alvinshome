@@ -81,7 +81,7 @@ include ("dbconnect.php");
 mysqli_close($conn);
     
     if($access == true){
-        
+        print("Reached here");
         $sql = "SELECT id,Security,Indoor,backlight,updateOTA,MotionSensor,LDR,changed_at FROM mydb.homethings WHERE ID='1'";
         $result = mysqli_query($conn,$sql1);
         $result = $conn->query($sql) or die($conn->error);
