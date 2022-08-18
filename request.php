@@ -24,6 +24,7 @@ include ("dbconnect.php");
         $sql = "SELECT Connection FROM mydb.Devices WHERE ID='1'";
         $result = mysqli_query($conn,$sql);
         $row = $result->fetch_assoc();
+       
         $connection1 = $row["Connection"] + 1;
         $sql = "UPDATE mydb.Devices SET Connection ='$connection1' WHERE ID='1'";
         mysqli_query($conn,$sql);
@@ -39,7 +40,8 @@ include ("dbconnect.php");
         $row = $result->fetch_assoc();
         $newTime = $row["time"];
         $connection = $row["Connection"] + 1;
-        
+         print($row["Connection"]);
+          print($row["time"]);
         $sql = "UPDATE mydb.Devices SET Connection= '$connection' WHERE ID='2'";
         mysqli_query($conn,$sql);
         
@@ -85,7 +87,7 @@ mysqli_close($conn);
     if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo "id: " . $row["id"]. " - Indoor: " . $row["Indoor"]. "Security " . $row["Security"]. "<br>";
+    echo "id: " . $row["id"]. " - Indoor: " . $row["Name"]. "Security " . $row["Connection"]. "<br>";
   }
 } else {
   echo "0 results";
