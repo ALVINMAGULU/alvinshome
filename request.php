@@ -40,7 +40,7 @@ print($json["Indoor"]);
        $row = $result->fetch_assoc();
         $json += ["pirV" => booleaner($row["Value"])];
         */
-   // print(json_encode($json));
+     echo json_encode($json,true);
     
    
     if($device == "Alvinesp1"){
