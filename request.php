@@ -26,7 +26,7 @@ include ("dbconnect.php");
         $result = $conn->query($sql) or die($conn->error);
         $row = $result->fetch_assoc();
         
-    $json = [];
+ /*   $json = [];
     $json += ["homeDevice" => $homedevice];
     $json += ["Indoor" => booleaner($row["Indoor"])];
     $json += ["Security" => booleaner($row["Security"])];
