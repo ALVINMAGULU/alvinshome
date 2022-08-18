@@ -19,7 +19,7 @@ include ("dbconnect.php");
    
          
  
-   // print($row["Indoor"]);
+    
         
       $sql = "SELECT id,Security,Indoor,backlight,updateOTA,MotionSensor,LDR,changed_at FROM mydb.homethings WHERE ID='1'";
         $result = mysqli_query($conn,$sql);
@@ -34,6 +34,7 @@ include ("dbconnect.php");
     $json += ["updateOTA" => booleaner($row["updateOTA"])];
      $json += ["pir" => $row["MotionSensor"]];
       $json += ["ldr" => booleaner($row["LDR"])];
+print($row["Indoor"]);
       print($json);
       /* $sql = "SELECT Value FROM MotionSensor ORDER BY ID DESC LIMIT 1";
        $result = mysqli_query($conn,$sql);
