@@ -19,7 +19,8 @@ include ("dbconnect.php");
    
          
  
-    
+    $age = array("Samy"=>"35", "Naveen"=>"37", "Amit"=>"43");
+print($age);
         
       $sql = "SELECT id,Security,Indoor,backlight,updateOTA,MotionSensor,LDR,changed_at FROM mydb.homethings WHERE ID='1'";
         $result = mysqli_query($conn,$sql);
