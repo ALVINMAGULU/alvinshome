@@ -19,9 +19,6 @@ include ("dbconnect.php");
    
          
  
-    $age = array("Samy"=>"35", "Naveen"=>"37", "Amit"=>"43");
-print($age);
-        
       $sql = "SELECT id,Security,Indoor,backlight,updateOTA,MotionSensor,LDR,changed_at FROM mydb.homethings WHERE ID='1'";
         $result = mysqli_query($conn,$sql);
         $result = $conn->query($sql) or die($conn->error);
@@ -35,8 +32,8 @@ print($age);
     $json += ["updateOTA" => booleaner($row["updateOTA"])];
      $json += ["pir" => $row["MotionSensor"]];
       $json += ["ldr" => booleaner($row["LDR"])];
-print($row["Indoor"]);
-      print($json);
+print($json["Indoor"]);
+      //print($json);
       /* $sql = "SELECT Value FROM MotionSensor ORDER BY ID DESC LIMIT 1";
        $result = mysqli_query($conn,$sql);
        $row = $result->fetch_assoc();
