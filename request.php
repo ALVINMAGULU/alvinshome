@@ -1,7 +1,7 @@
 <?php
 
 include ("dbconnect.php");
-include ("methods.php");
+//include ("methods.php");
 
 
     $device = $_GET["device"];
