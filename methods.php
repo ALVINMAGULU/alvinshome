@@ -1,11 +1,5 @@
 <?php
-function booleaner($string){
-       if($string == "0"){
-           return false;
-       }else if($string == "1"){
-           return true;
-       }
-   }
+
 
 public static function convert_to_utf8($dat)
    {
