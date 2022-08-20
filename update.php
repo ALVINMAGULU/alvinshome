@@ -22,15 +22,7 @@ $ldr = $_GET["LR"];
     
     $sql = "UPDATE mydb.homethings SET updateOTA= '$ota' WHERE ID='1'";
     mysqli_query($conn,$sql);
-     if(!$sql)
-{
-    echo mysqli_error($conn);
-    die();
-}
-else
-{
-    echo "Query succesfully executed!";
-}     
+     
      $sql = "UPDATE mydb.homethings SET MotionSensor= '$pir'WHERE ID='1'";
     mysqli_query($conn,$sql);
     
