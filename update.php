@@ -1,5 +1,5 @@
 <?php
-include ("dbconnect.php");
+include ("config.php");
 
 $Security = $_GET["SL"];
 $Indoor = $_GET["IL"];
