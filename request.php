@@ -16,7 +16,21 @@ include ("dbconnect.php");
        }else if($string == '1'){
            return true;
        }
-   }   
+   } 
+       $sql = "SELECT time FROM mydb.Devices WHERE ID='1'";
+        $result = mysqli_query($conn,$sql);
+        $row = $result->fetch_assoc();
+        $timestamp = strtotime($row["time"]);
+        $d1 = new DateTime(date("Y-m-d H:i:s",$timestamp));
+        $d2 = new DateTime(date("Y-m-d H:i:s",strtotime($newTime)));
+        
+        $interval = $d1->diff($d2);
+        $diffInSeconds = $interval->s;
+            if($diffInSeconds >= 15){
+            $homedevice = false;
+        }else if($diffInSeconds < 15 && $interval->i < 1 && $interval->h < 1&& $interval->d < 1&& $interval->m < 1&& $interval->y < 1){
+            $homedevice = true;
+        }
     if($device == "Alvinesp1"){
         $sql = "SELECT Connection FROM mydb.Devices WHERE ID='1'";
         $result = mysqli_query($conn,$sql);
@@ -56,21 +70,6 @@ include ("dbconnect.php");
         
         $sql = "UPDATE mydb.Devices SET Connection= '$connection', time= now() WHERE ID='3'";
         mysqli_query($conn,$sql);
-        
-       $sql = "SELECT time FROM mydb.Devices WHERE ID='1'";
-        $result = mysqli_query($conn,$sql);
-        $row = $result->fetch_assoc();
-        $timestamp = strtotime($row["time"]);
-        $d1 = new DateTime(date("Y-m-d H:i:s",$timestamp));
-        $d2 = new DateTime(date("Y-m-d H:i:s",strtotime($newTime)));
-        
-        $interval = $d1->diff($d2);
-        $diffInSeconds = $interval->s;
-            if($diffInSeconds >= 15){
-            $homedevice = false;
-        }else if($diffInSeconds < 15 && $interval->i < 1 && $interval->h < 1&& $interval->d < 1&& $interval->m < 1&& $interval->y < 1){
-            $homedevice = true;
-        }
         
          $access = true;
     }
