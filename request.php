@@ -16,7 +16,9 @@ include ("dbconnect.php");
        }else if($string == '1'){
            return true;
        }
-   } 
+   }   
+
+       $newTime = date('Y-m-d H:i:s');
        $sql = "SELECT time FROM mydb.Devices WHERE ID='1'";
         $result = mysqli_query($conn,$sql);
         $row = $result->fetch_assoc();
@@ -65,7 +67,7 @@ include ("dbconnect.php");
         $result = mysqli_query($conn,$sql);
         $result = $conn->query($sql) or die($conn->error);
         $row = $result->fetch_assoc();
-        $newTime = $row["time"];
+        
         $connection = $row["Connection"] + 1;
         
         $sql = "UPDATE mydb.Devices SET Connection= '$connection', time= now() WHERE ID='3'";
