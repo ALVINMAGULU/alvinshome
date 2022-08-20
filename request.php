@@ -18,7 +18,7 @@ include ("dbconnect.php");
        }
    }   
 
-       $newTime = date('Y-m-d H:i:s');
+       $newTime = time();
        $sql = "SELECT time FROM mydb.Devices WHERE ID='1'";
         $result = mysqli_query($conn,$sql);
         $row = $result->fetch_assoc();
