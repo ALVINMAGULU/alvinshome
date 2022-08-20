@@ -18,7 +18,7 @@ include ("dbconnect.php");
        }
    }
 
-public static function convert_to_utf8($dat)
+/*public static function convert_to_utf8($dat)
    {
       if (is_string($dat)) {
          return utf8_encode($dat);
@@ -35,7 +35,7 @@ public static function convert_to_utf8($dat)
          return $dat;
       }
    }
-   
+  */ 
    
          
  
