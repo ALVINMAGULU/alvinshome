@@ -25,7 +25,7 @@ include ("config.php");
         $row = $result->fetch_assoc();
         $timestamp = strtotime($row["time"]);
         $d1 = new DateTime(date("Y-m-d H:i:s",$timestamp));
-        $d2 = new DateTime(date("Y-m-d H:i:s",strtotime($newTime)));
+        $d2 = new DateTime(date("Y-m-d H:i:s"));
        
         $interval = $d1->diff($d2);
         $diffInSeconds = $interval->s;
