@@ -61,7 +61,7 @@ print($json["Indoor"]);
        $row = $result->fetch_assoc();
         $json += ["pirV" => booleaner($row["Value"])];
         */
-     echo json_encode(convert_to_utf8($json));
+     echo json_encode($json);
     // print(json_last_error_msg());
     
    
