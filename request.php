@@ -3,6 +3,7 @@
 include ("dbconnect.php");
 //include ("methods.php");
    ini_set('display_errors', 'On');
+   error_reporting(E_ALL);
 
     $device = $_GET["device"];
     $access = false;
