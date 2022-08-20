@@ -1,5 +1,5 @@
 <?php
-include ("dbconnect.php");
+include ("config.php");
 
  $action = $_GET["action"];
  
