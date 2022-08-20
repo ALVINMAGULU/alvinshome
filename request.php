@@ -2,7 +2,7 @@
 
 include ("dbconnect.php");
 //include ("methods.php");
-
+   ini_set('display_errors', 'On');
 
     $device = $_GET["device"];
     $access = false;
