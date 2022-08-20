@@ -1,7 +1,7 @@
 <?php
 
 include ("dbconnect.php");
-//include ("methods.php");
+
    ini_set('display_errors', 'On');
    error_reporting(E_ALL);
 
@@ -37,8 +37,7 @@ include ("dbconnect.php");
         $row = $result->fetch_assoc();
         $newTime = $row["time"];
         $connection = $row["Connection"] + 1;
-       //  print($row["Connection"]);
-         //print($row["time"]);
+      
         $sql = "UPDATE mydb.Devices SET Connection= '$connection' WHERE ID='2'";
         mysqli_query($conn,$sql);
         
@@ -96,11 +95,11 @@ include ("dbconnect.php");
      $json += ["pir" => $row["MotionSensor"]];
       $json += ["ldr" => booleaner($row["LDR"])];
       
-      /* $sql = "SELECT Value FROM MotionSensor ORDER BY ID DESC LIMIT 1";
+      $sql = "SELECT Value FROM MotionSensor ORDER BY ID DESC LIMIT 1";
        $result = mysqli_query($conn,$sql);
        $row = $result->fetch_assoc();
         $json += ["pirV" => booleaner($row["Value"])];
-        */
+       
     print(json_encode($json));
        
     mysqli_close($conn);
