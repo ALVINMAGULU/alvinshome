@@ -26,15 +26,11 @@ include ("dbconnect.php");
         $timestamp = strtotime($row["time"]);
         $d1 = new DateTime(date("Y-m-d H:i:s",$timestamp));
         $d2 = new DateTime(date("Y-m-d H:i:s",strtotime($newTime)));
-        echo time();
-        echo "\n";
-        echo $timestamp; 
-         echo "\n";
+       
         $interval = $d1->diff($d2);
         $diffInSeconds = $interval->s;
-            if($diffInSeconds >= 15){
-            $homedevice = false;
-        }else if($diffInSeconds < 15 && $interval->i < 1 && $interval->h < 1&& $interval->d < 1&& $interval->m < 1&& $interval->y < 1){
+echo  $diffInSeconds;
+            if($diffInSeconds < 15 && $interval->i < 1 && $interval->h < 1&& $interval->d < 1&& $interval->m < 1&& $interval->y < 1){
             $homedevice = true;
         }
     if($device == "Alvinesp1"){
