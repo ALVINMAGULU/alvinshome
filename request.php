@@ -16,55 +16,7 @@ include ("dbconnect.php");
        }else if($string == '1'){
            return true;
        }
-   }
-
-/*public static function convert_to_utf8($dat)
-   {
-      if (is_string($dat)) {
-         return utf8_encode($dat);
-      } elseif (is_array($dat)) {
-         $ret = [];
-         foreach ($dat as $i => $d) $ret[ $i ] = self::convert_to_utf8($d);
-
-         return $ret;
-      } elseif (is_object($dat)) {
-         foreach ($dat as $i => $d) $dat->$i = self::convert_to_utf8($d);
-
-         return $dat;
-      } else {
-         return $dat;
-      }
-   }
-  */ 
-   
-         
- 
-      $sql = "SELECT id,Security,Indoor,backlight,updateOTA,MotionSensor,LDR,changed_at FROM mydb.homethings WHERE ID='1'";
-        $result = mysqli_query($conn,$sql);
-        $result = $conn->query($sql) or die($conn->error);
-        $row = $result->fetch_assoc();
-        print(booleaner(0));
-        //print($row["Indoor"]);
-    $json = [];
-   // $json += ["homeDevice" => $homedevice];
-    $json += ["Indoor" => $row["Indoor"]];
-    $json += ["Security" => $row["Security"]];
-    $json += ["backlight" => $row["backlight"]];
-    $json += ["updateOTA" => $row["updateOTA"]];
-     $json += ["pir" => $row["MotionSensor"]];
-      $json += ["ldr" => $row["LDR"]];
-print_r ($json);
-print($json["Indoor"]);
-      //print($json);
-      /* $sql = "SELECT Value FROM MotionSensor ORDER BY ID DESC LIMIT 1";
-       $result = mysqli_query($conn,$sql);
-       $row = $result->fetch_assoc();
-        $json += ["pirV" => booleaner($row["Value"])];
-        */
-     echo json_encode($json);
-    // print(json_last_error_msg());
-    
-   
+   }   
     if($device == "Alvinesp1"){
         $sql = "SELECT Connection FROM mydb.Devices WHERE ID='1'";
         $result = mysqli_query($conn,$sql);
@@ -126,7 +78,30 @@ print($json["Indoor"]);
 
     
     if($access == true){
-        print("Reached here");
+       
+         $sql = "SELECT id,Security,Indoor,backlight,updateOTA,MotionSensor,LDR,changed_at FROM mydb.homethings WHERE ID='1'";
+        $result = mysqli_query($conn,$sql);
+        $result = $conn->query($sql) or die($conn->error);
+        $row = $result->fetch_assoc();
+       
+        
+    
+      $json = [];
+      $json = [];
+      $json += ["homeDevice" => $homedevice];
+      $json += ["Indoor" => booleaner($row["Indoor"])];
+      $json += ["Security" => booleaner($row["Security"])];
+      $json += ["backlight" => booleaner($row["backlight"])];
+      $json += ["updateOTA" => booleaner($row["updateOTA"])];
+     $json += ["pir" => $row["MotionSensor"]];
+      $json += ["ldr" => booleaner($row["LDR"])];
+      
+      /* $sql = "SELECT Value FROM MotionSensor ORDER BY ID DESC LIMIT 1";
+       $result = mysqli_query($conn,$sql);
+       $row = $result->fetch_assoc();
+        $json += ["pirV" => booleaner($row["Value"])];
+        */
+    print(json_encode($json));
        
     mysqli_close($conn);
     }else{
