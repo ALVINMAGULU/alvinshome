@@ -27,7 +27,9 @@ include ("dbconnect.php");
         $d1 = new DateTime(date("Y-m-d H:i:s",$timestamp));
         $d2 = new DateTime(date("Y-m-d H:i:s",strtotime($newTime)));
         echo time();
-        echo $timestamp;
+        echo "\n";
+        echo $timestamp; 
+         echo "\n";
         $interval = $d1->diff($d2);
         $diffInSeconds = $interval->s;
             if($diffInSeconds >= 15){
