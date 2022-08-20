@@ -19,13 +19,15 @@ include ("dbconnect.php");
    }   
 
        $newTime = time();
+        
        $sql = "SELECT time FROM mydb.Devices WHERE ID='1'";
         $result = mysqli_query($conn,$sql);
         $row = $result->fetch_assoc();
         $timestamp = strtotime($row["time"]);
         $d1 = new DateTime(date("Y-m-d H:i:s",$timestamp));
         $d2 = new DateTime(date("Y-m-d H:i:s",strtotime($newTime)));
-        
+        echo $d1;
+        echo $d2;
         $interval = $d1->diff($d2);
         $diffInSeconds = $interval->s;
             if($diffInSeconds >= 15){
