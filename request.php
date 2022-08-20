@@ -38,7 +38,7 @@ include ("dbconnect.php");
         $newTime = $row["time"];
         $connection = $row["Connection"] + 1;
       
-        $sql = "UPDATE mydb.Devices SET Connection= '$connection' WHERE ID='2'";
+        $sql = "UPDATE mydb.Devices SET Connection= '$connection',time= now() WHERE ID='2'";
         mysqli_query($conn,$sql);
         
        
