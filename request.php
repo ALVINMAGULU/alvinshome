@@ -29,7 +29,7 @@ include ("config.php");
        
         $interval = $d1->diff($d2);
         $diffInSeconds = $interval->s;
-echo  $interval->h;
+
             if($diffInSeconds < 15 && $interval->i < 1 && $interval->h < 1&& $interval->d < 1&& $interval->m < 1&& $interval->y < 1){
             $homedevice = true;
         }
