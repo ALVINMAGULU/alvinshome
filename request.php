@@ -23,7 +23,7 @@ include ("dbconnect.php");
         $row = $result->fetch_assoc();
        
         $connection1 = $row["Connection"] + 1;
-        $sql = "UPDATE mydb.Devices SET Connection ='$connection1' WHERE ID='1'";
+        $sql = "UPDATE mydb.Devices SET Connection ='$connection1',time= now() WHERE ID='1'";
         mysqli_query($conn,$sql);
         
         $access = true;
@@ -54,7 +54,7 @@ include ("dbconnect.php");
         $newTime = $row["time"];
         $connection = $row["Connection"] + 1;
         
-        $sql = "UPDATE mydb.Devices SET Connection= '$connection' WHERE ID='3'";
+        $sql = "UPDATE mydb.Devices SET Connection= '$connection', time= now() WHERE ID='3'";
         mysqli_query($conn,$sql);
         
        $sql = "SELECT time FROM mydb.Devices WHERE ID='1'";
