@@ -18,8 +18,8 @@ include ("config.php");
        }
    }   
 
-       $newTime = time();
-        echo date('Y-m-d H:i:s');
+       
+        
        $sql = "SELECT time FROM mydb.Devices WHERE ID='1'";
         $result = mysqli_query($conn,$sql);
         $row = $result->fetch_assoc();
