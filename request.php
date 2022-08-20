@@ -1,6 +1,6 @@
 <?php
 
-include ("dbconnect.php");
+include ("config.php");
 
    ini_set('display_errors', 'On');
    error_reporting(E_ALL);
@@ -9,7 +9,7 @@ include ("dbconnect.php");
     $access = false;
     $time = "";
     $homedevice = false;
-   
+    
    function booleaner($string){
        if($string == '0'){
            return false;
